@@ -8,6 +8,9 @@ module.exports = {
     "eslint:recommended",
     "@vue/eslint-config-prettier",
   ],
+  rules: {
+    "vue/component-name-in-template-casing": ["error", "PascalCase"]
+  },
   env: {
     "vue/setup-compiler-macros": true,
   },
