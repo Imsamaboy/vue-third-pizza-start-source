@@ -1,4 +1,4 @@
 export enum PizzaSauceEnum {
-    tomato = 1,
-    creamy,
+  tomato = 1,
+  creamy,
 }

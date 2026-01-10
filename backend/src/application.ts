@@ -26,7 +26,7 @@ export class Application extends BootMixin(ServiceMixin(RepositoryMixin(RestAppl
     // Set up the custom sequence
     this.sequence(MySequence);
 
-    // Set up default home page
+    // Set up default pizza page
     this.static('/public', path.join(__dirname, '../public'));
 
     // Customize @loopback/rest-explorer configuration here

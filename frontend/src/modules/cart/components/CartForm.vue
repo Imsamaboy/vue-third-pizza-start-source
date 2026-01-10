@@ -3,26 +3,26 @@
     <label :class="$style.selectRow">
       <span :class="$style.label">Получение заказа:</span>
       <DropdownComponent
-          v-model="delivery"
-          name="delivery"
-          :options="[
-          { value: '1', text: 'Заберу сам' },
-          { value: '2', text: 'Новый адрес' },
-          { value: '3', text: 'Дом' },
+        v-model="delivery"
+        name="delivery"
+        :options="[
+          { value: BaseDeliveryEnum.self, text: 'Заберу сам' },
+          { value: BaseDeliveryEnum.new, text: 'Новый адрес' },
+          ...additionalAddresses,
         ]"
       />
     </label>
 
     <TextInput
-        v-model="phone"
-        name="tel"
-        placeholder="+7 999-999-99-99"
-        :class="$style.input"
+      v-model="phone"
+      name="tel"
+      placeholder="+7 999-999-99-99"
+      :class="$style.input"
     >
       <span>Контактный телефон:</span>
     </TextInput>
 
-    <div v-if="delivery === '2'" :class="$style.address">
+    <div v-if="delivery === 'new'" :class="$style.address">
       <span :class="$style.label">Новый адрес:</span>
 
       <FormLine v-model="street" name="street" label="Улица*" />
@@ -36,12 +36,26 @@
 import TextInput from "@/common/components/TextInput.vue";
 import DropdownComponent from "@/common/components/DropdownComponent.vue";
 import FormLine from "@/modules/cart/components/FormLine.vue";
+import { IUserAddress } from "@/modules/profile/types/IUserAddress";
+import { computed } from "vue";
+import { BaseDeliveryEnum } from "@/modules/cart/types/BaseDeliveryEnum";
 
-const delivery = defineModel<string>({ default: "1" });
-const phone = defineModel<string>("phone", { default: "" });
+const delivery = defineModel<string>("delivery");
+const phone = defineModel<string>("phone");
+
+const additionalAddresses = computed(() => {
+  return props.addresses.map((address) => {
+    return { value: address.id.toString(), text: address.name };
+  });
+});
+
 const street = defineModel<string>("street", { default: "" });
 const house = defineModel<string>("house", { default: "" });
 const apartment = defineModel<string>("apartment", { default: "" });
+
+const props = defineProps<{
+  addresses: IUserAddress[];
+}>();
 </script>
 
 <style module lang="scss">

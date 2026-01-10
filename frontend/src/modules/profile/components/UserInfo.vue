@@ -3,11 +3,11 @@
     <picture>
       <source type="image/webp" :srcset="toSrcset(avatar.webp)" />
       <img
-          :src="avatar.jpg.x1"
-          :srcset="toSrcset(avatar.jpg)"
-          :alt="name"
-          :width="size"
-          :height="size"
+        :src="avatar.jpg.x1"
+        :srcset="toSrcset(avatar.jpg)"
+        :alt="name"
+        :width="size"
+        :height="size"
       />
     </picture>
 
@@ -38,11 +38,11 @@ const { size = 72 } = defineProps<{
 function toSrcset(pair?: Record<string, string>) {
   if (!pair) return "";
   return Object.entries(pair)
-      .map(([key, url]) => {
-        const density = key.startsWith("x") ? key.slice(1) : "";
-        return density ? `${url} ${density}x` : url;
-      })
-      .join(", ");
+    .map(([key, url]) => {
+      const density = key.startsWith("x") ? key.slice(1) : "";
+      return density ? `${url} ${density}x` : url;
+    })
+    .join(", ");
 }
 </script>
 

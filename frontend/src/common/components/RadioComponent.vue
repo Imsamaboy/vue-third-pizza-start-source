@@ -1,12 +1,12 @@
 <template>
   <label :class="$style.radio">
     <InputComponent
-        v-model="modelValue"
-        :class="$style.input"
-        type="radio"
-        :name="name"
-        :value="value"
-        :disabled="disabled"
+      v-model="modelValue"
+      :class="$style.input"
+      type="radio"
+      :name="name"
+      :value="value"
+      :disabled="disabled"
     />
 
     <span :class="$style.text">

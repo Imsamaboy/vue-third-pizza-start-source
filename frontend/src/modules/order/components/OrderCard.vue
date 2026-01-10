@@ -1,10 +1,10 @@
 <template>
   <SheetComponent tag="section" :class="$style.order">
     <OrderHeader
-        :order-number="orderNumber"
-        :total="total"
-        @delete="$emit('delete')"
-        @repeat="$emit('repeat')"
+      :order-number="orderNumber"
+      :total="total"
+      @delete="$emit('delete')"
+      @repeat="$emit('repeat')"
     />
 
     <OrderList :items="products" />
@@ -21,14 +21,15 @@ import SheetComponent from "@/common/components/SheetComponent.vue";
 import OrderHeader from "./OrderHeader.vue";
 import OrderList from "./OrderList.vue";
 import OrderAdditionalList from "./OrderAdditionalList.vue";
-import type { AdditionalItem, ProductItem } from "@/types";
+import { IAdditionalPizzaItem } from "@/modules/pizza/types/IAdditionalPizzaItem";
+import { IPizzaItem } from "@/modules/pizza/types/IPizzaItem";
 
 defineProps<{
   orderNumber: number | string;
   total: number;
-  products: ProductItem[];
-  additionals?: AdditionalItem[];
-  address?: string;
+  products: IPizzaItem[];
+  additionals?: IAdditionalPizzaItem[];
+  address?: string | null;
 }>();
 
 defineEmits<{

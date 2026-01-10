@@ -3,19 +3,19 @@
     <aside :class="$style.sidebar" :style="{ width: sidebarWidth + 'px' }">
       <RouterLink v-if="logo?.src" to="/" :class="$style.logo">
         <img
-            :src="logo.src"
-            :alt="logo.alt || 'Logo'"
-            :width="logo.width ?? 90"
-            :height="logo.height ?? 40"
+          :src="logo.src"
+          :alt="logo.alt || 'Logo'"
+          :width="logo.width ?? 90"
+          :height="logo.height ?? 40"
         />
       </RouterLink>
 
       <nav :class="$style.nav">
         <RouterLink
-            v-for="l in links"
-            :key="l.href + l.label"
-            :to="l.href"
-            :class="[$style.link, currentPath === l.href && $style.active]"
+          v-for="l in links"
+          :key="l.href + l.label"
+          :to="l.href"
+          :class="[$style.link, currentPath === l.href && $style.active]"
         >
           {{ l.label }}
         </RouterLink>
@@ -42,13 +42,13 @@ const route = useRoute();
 const sidebarWidth = computed(() => (route.meta.sidebarWidth as number) ?? 180);
 const title = computed(() => route.meta.title as string | undefined);
 const logo = computed(
-    () =>
-        route.meta.logo as
-            | { src: string; alt?: string; width?: number; height?: number }
-            | undefined,
+  () =>
+    route.meta.logo as
+      | { src: string; alt?: string; width?: number; height?: number }
+      | undefined,
 );
 const links = computed(
-    () => (route.meta.links as { label: string; href: string }[]) ?? [],
+  () => (route.meta.links as { label: string; href: string }[]) ?? [],
 );
 const currentPath = computed(() => route.path);
 </script>

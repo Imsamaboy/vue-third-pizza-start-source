@@ -1,15 +1,15 @@
 <template>
   <input
-      v-model="modelValue"
-      :type="type"
-      :name="name"
-      :min="min"
-      :max="max"
-      :step="step"
-      :placeholder="placeholder"
-      :readonly="readonly"
-      :disabled="disabled"
-      v-bind="$attrs"
+    v-model="modelValue"
+    :type="type"
+    :name="name"
+    :min="min"
+    :max="max"
+    :step="step"
+    :placeholder="placeholder"
+    :readonly="readonly"
+    :disabled="disabled"
+    v-bind="$attrs"
   />
 </template>
 <script setup lang="ts">

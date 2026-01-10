@@ -1,14 +1,14 @@
 <template>
   <ButtonComponent
-      :class="[
+    :class="[
       $style.close,
       {
         [$style.white]: !!white,
       },
     ]"
-      type="button"
-      :aria-label="innerAriaLabel"
-      @click="$emit('close')"
+    type="button"
+    :aria-label="innerAriaLabel"
+    @click="$emit('close')"
   />
 </template>
 
