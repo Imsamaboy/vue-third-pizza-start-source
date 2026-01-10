@@ -15,10 +15,10 @@ defineEmits<{
   <section :class="$style.footer">
     <div :class="$style.more">
       <ButtonComponent
-          type="button"
-          variant="border"
-          :class="$style.moreButton"
-          @click="$emit('more')"
+        type="button"
+        variant="border"
+        :class="$style.moreButton"
+        @click="$emit('more')"
       >
         Хочу еще одну
       </ButtonComponent>

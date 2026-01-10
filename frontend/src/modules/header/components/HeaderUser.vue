@@ -4,10 +4,22 @@
     <router-link to="/login" :class="$style.login">
       <span>Войти</span>
     </router-link>
+
+    <!--    <a v-else href="#" :class="$style.logout">-->
+    <!--      <img :src="props.user.avatar" :alt="props.user.name" />-->
+    <!--      <span>{{ props.user.name }}</span>-->
+    <!--    </a>-->
   </div>
 </template>
 
-<script setup lang="ts"></script>
+<script setup lang="ts">
+// defineProps<{
+//   user?: {
+//     name: string;
+//     avatar: string;
+//   };
+// }>();
+</script>
 
 <style module lang="scss">
 @use "@/assets/scss/ds-system/ds-colors";

@@ -1,9 +1,9 @@
 <template>
   <select
-      v-model="modelValue"
-      :name="name"
-      :disabled="disabled"
-      :class="$style.select"
+    v-model="modelValue"
+    :name="name"
+    :disabled="disabled"
+    :class="$style.select"
   >
     <option v-for="option in options" :key="option.value" :value="option.value">
       {{ option.text }}

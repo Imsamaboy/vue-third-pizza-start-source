@@ -10,16 +10,16 @@
 
     <div :class="$style.actions">
       <ButtonComponent
-          type="button"
-          :class="[$style.btn, $style.btnBorder]"
-          @click="$emit('delete')"
+        type="button"
+        :class="[$style.btn, $style.btnBorder]"
+        @click="$emit('delete')"
       >
         Удалить
       </ButtonComponent>
       <ButtonComponent
-          type="button"
-          :class="$style.btn"
-          @click="$emit('repeat')"
+        type="button"
+        :class="$style.btn"
+        @click="$emit('repeat')"
       >
         Повторить
       </ButtonComponent>

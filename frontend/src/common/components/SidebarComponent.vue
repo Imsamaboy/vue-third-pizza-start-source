@@ -2,19 +2,19 @@
   <div :class="$style.root">
     <a :href="links[0]?.href || '#'" :class="$style.logo">
       <img
-          :src="logoSrc"
-          :alt="logoAlt || 'Logo'"
-          :width="logoWidth ?? 90"
-          :height="logoHeight ?? 40"
+        :src="logoSrc"
+        :alt="logoAlt || 'Logo'"
+        :width="logoWidth ?? 90"
+        :height="logoHeight ?? 40"
       />
     </a>
 
     <nav :class="$style.nav">
       <a
-          v-for="l in links"
-          :key="l.href + l.label"
-          :href="l.href"
-          :class="[$style.link, l.active && $style.active]"
+        v-for="l in links"
+        :key="l.href + l.label"
+        :href="l.href"
+        :class="[$style.link, l.active && $style.active]"
       >
         {{ l.label }}
       </a>

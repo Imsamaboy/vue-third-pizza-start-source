@@ -1,6 +1,6 @@
 <template>
   <label
-      :class="[
+    :class="[
       $style.input,
       {
         [$style.bigLabel]: isBig,
@@ -9,10 +9,10 @@
   >
     <slot v-if="$slots.default" />
     <InputComponent
-        v-model="modelValue"
-        :type="type"
-        :name="name"
-        :placeholder="placeholder"
+      v-model="modelValue"
+      :type="type"
+      :name="name"
+      :placeholder="placeholder"
     />
   </label>
 </template>

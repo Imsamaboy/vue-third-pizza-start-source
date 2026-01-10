@@ -1,10 +1,10 @@
 <template>
   <button
-      :type="type"
-      :disabled="disabled"
-      :class="[$style.button, $style[variant], arrow && $style.arrow]"
-      v-bind="$attrs"
-      @click="emits('click', $event)"
+    :type="type"
+    :disabled="disabled"
+    :class="[$style.button, $style[variant], arrow && $style.arrow]"
+    v-bind="$attrs"
+    @click="emits('click', $event)"
   >
     <slot />
   </button>

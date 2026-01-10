@@ -5,7 +5,7 @@ FROM node:20-slim
 USER node
 
 # Create app directory (with user `node`)
-RUN mkdir -p /home/node/app
+RUN mkdir -p /pizza/node/app
 
 WORKDIR /home/node/app
 
