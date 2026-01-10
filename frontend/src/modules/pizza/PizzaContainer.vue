@@ -39,7 +39,6 @@ import { usePizzaStore } from "@/modules/pizza/pizzaStore";
 import ContentPizza from "@/modules/pizza/content/ContentPizza.vue";
 
 const pizzaStore = usePizzaStore();
-
 </script>
 
 <style module lang="scss">
